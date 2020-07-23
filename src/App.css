@@ -1,0 +1,12 @@
+.App {
+  text-align: center;
+}
+
+ul {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+li img {
+  width: 50 px; 
+}
