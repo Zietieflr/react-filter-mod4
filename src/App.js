@@ -30,8 +30,8 @@ function App() {
     let sorted = [...characters].sort((a,b) => {
       let condition = !sort ? (a.name < b.name) : (a.name > b.name)
       return condition ? -1 : 1
-  })
-    setCharacters(sorted)
+    })
+    setCharacters([...sorted])
   }
 
   useEffect(fetchCharacters, [])
@@ -40,7 +40,7 @@ function App() {
     <div className="App">
       <h1>SEARCH FILTER</h1>
       <button onClick={handleClick}>Alive</button>
-      <button onClick={() => setCharacters(sortCharacters)}>A / Z ↕</button>
+      <button onClick={sortCharacters}>A / Z ↕</button>
       <input name='search' value={search} onChange={(event) => setSearch(event.target.value.toLowerCase())}/>
       <ul>
         {showCharacters(filtered)}
